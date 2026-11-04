@@ -8,23 +8,23 @@
   <title>Kabir Pharma | Chikni, Madhepura</title>
   <style>
     :root {
-      --site-primary: #087f68;
+      --site-primary: #16a085;
       --site-on-primary: #ffffff;
-      --site-secondary: #e1f3ed;
-      --site-on-secondary: #123c32;
-      --site-background: #f4faf7;
-      --site-on-background: #17352e;
+      --site-secondary: #172b27;
+      --site-on-secondary: #f1faf6;
+      --site-background: #0b1513;
+      --site-on-background: #e8f3ef;
       --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --site-font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --site-heading-scale: 1;
       --site-spacing-scale: 1;
       --site-radius-scale: 1;
       --site-decoration-opacity: 1;
-      --surface: light-dark(#ffffff, #182722);
-      --surface-soft: light-dark(#eef7f2, #20332c);
-      --text-muted: light-dark(#60776f, #b1c4bc);
-      --line: light-dark(#dcebe3, #344b41);
-      color-scheme: light dark;
+      --surface: #14221e;
+      --surface-soft: #1b302a;
+      --text-muted: #b1c4bc;
+      --line: #29443a;
+      color-scheme: dark;
     }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: var(--site-font-body); background: var(--site-background); color: var(--site-on-background); }
@@ -32,7 +32,7 @@
     .topbar { background: var(--site-primary); color: var(--site-on-primary); padding: calc(13px * var(--site-spacing-scale)) 5vw; }
     .topbar-inner { max-width: 1120px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .brand-mini { display: flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: .2px; }
-    .brand-icon { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.17); font-size: 22px; }
+    .brand-logo { width: 46px; height: 46px; object-fit: contain; background: #ffffff; border-radius: 12px; padding: 3px; }
     .top-note { font-size: 13px; opacity: .9; }
     .hero { position: relative; padding: calc(62px * var(--site-spacing-scale)) 5vw calc(54px * var(--site-spacing-scale)); background: linear-gradient(135deg, var(--site-secondary), var(--site-background)); }
     .hero-inner { max-width: 1120px; margin: auto; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 42px; }
@@ -48,7 +48,8 @@
     .hero-art:before, .hero-art:after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.17); border-radius: 50%; opacity: var(--site-decoration-opacity); }
     .hero-art:before { width: 300px; height: 300px; right: -90px; top: -110px; }
     .hero-art:after { width: 220px; height: 220px; left: -75px; bottom: -115px; }
-    .medical-symbol { width: 150px; height: 150px; border-radius: 42px; background: rgba(255,255,255,.13); display: grid; place-items: center; font-size: 88px; transform: rotate(-7deg); z-index: 1; }
+    .medical-symbol { width: 190px; height: 190px; border-radius: 36px; background: #ffffff; display: grid; place-items: center; padding: 12px; z-index: 1; box-shadow: 0 16px 40px rgba(0,0,0,.22); }
+    .medical-symbol img { width: 100%; height: 100%; object-fit: contain; }
     .art-label { position: absolute; bottom: 24px; z-index: 1; font-size: 13px; letter-spacing: 1.7px; text-transform: uppercase; font-weight: 700; opacity: .9; }
     .section { padding: 58px 5vw; }
     .section-inner { max-width: 1120px; margin: auto; }
@@ -66,6 +67,7 @@
     .contact-band { background: var(--site-secondary); padding: 36px; border-radius: calc(24px * var(--site-radius-scale)); display: flex; align-items: center; justify-content: space-between; gap: 22px; }
     .contact-band h2 { margin: 0 0 8px; font-size: calc(25px * var(--site-heading-scale)); color: var(--site-on-secondary); }
     .contact-band p { margin: 0; color: var(--text-muted); line-height: 1.5; }
+    .map-frame { width: 100%; height: 320px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
     footer { padding: 24px 5vw; border-top: 1px solid var(--line); color: var(--text-muted); font-size: 12px; }
     .footer-inner { max-width: 1120px; margin: auto; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
     @media (max-width: 760px) {
@@ -83,10 +85,7 @@
   <main class="app">
     <header class="topbar">
       <div class="topbar-inner">
-        <div class="brand-mini">
-  <img src="logo.png" alt="Kabir Pharma Logo" style="width:45px;height:45px;object-fit:contain;background:white;border-radius:10px;padding:3px">
-  <span>KABIR PHARMA</span>
-        </div>
+        <div class="brand-mini"><img class="brand-logo" src="https://r26732974-ctrl.github.io/kabir-pharma/logo.png" alt="Kabir Pharma logo"><span>KABIR PHARMA</span></div>
         <div class="top-note">Your neighbourhood pharmacy</div>
       </div>
     </header>
@@ -99,10 +98,11 @@
           <div class="actions">
             <a class="btn btn-primary" href="tel:+918986595782">☎ Call Kabir Pharma</a>
             <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Kabir+Pharma+Chikni+Madhepura+Bihar" target="_blank" rel="noopener">⌖ Find us</a>
+            <a class="btn btn-secondary" href="https://wa.me/918986595782" target="_blank" rel="noopener">WhatsApp us</a>
           </div>
         </div>
         <div class="hero-art" aria-label="Pharmacy healthcare symbol">
-          <div class="medical-symbol">✚</div>
+          <div class="medical-symbol"><img src="https://r26732974-ctrl.github.io/kabir-pharma/logo.png" alt="Kabir Pharma logo"></div>
           <div class="art-label">Kabir Pharma · Chikni</div>
         </div>
       </div>
@@ -135,12 +135,20 @@
     </section>
     <section class="section" style="padding-top:0">
       <div class="section-inner">
+        <h2 class="section-heading">Find Kabir Pharma</h2>
+        <p class="section-sub">Chikni, Madhepura, Bihar, India</p>
+        <iframe class="map-frame" title="Map showing Chikni, Madhepura, Bihar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Chikni%2C%20Madhepura%2C%20Bihar&output=embed"></iframe>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="section-inner">
         <div class="contact-band">
           <div>
             <h2>Need to speak with us?</h2>
-            <p>Call Kabir Pharma during our opening hours.</p>
+            <p>Call or message Kabir Pharma during our opening hours.</p>
           </div>
           <a class="btn btn-primary" href="tel:+918986595782">Call now&nbsp; →</a>
+          <a class="btn btn-secondary" href="https://wa.me/918986595782" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </section>

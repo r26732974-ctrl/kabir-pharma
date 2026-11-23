@@ -1,98 +1,223 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="description" content="Kabir Pharma, Chikni, Madhepura, Bihar. Browse a sample medicine catalogue and enquire about availability on WhatsApp.">
-<title>Kabir Pharma | Chikni, Madhepura</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kabir Pharma | Online Pharmacy</title>
+
 <style>
-:root{--green:#15803d;--bg:#ffffff;--panel:#f3f7f4;--panel2:#e8f3eb;--text:#17251c;--muted:#58665d;--line:#d5e2d8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#ffffff;color:#17251c;;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
-a{color:inherit}.wrap{width:min(1120px,90%);margin:auto}.top{background:var(--green);color:#fff;padding:12px 0}.topin{display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.5px}.logo{width:46px;height:46px;object-fit:contain;background:white;border-radius:12px;padding:3px}.top small{font-weight:600}
-.hero{padding:64px 0;background:linear-gradient(130deg,#18372d,#091411)}.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}.tag{display:inline-block;border:1px solid #315947;background:#13251f;color:#66dbb7;border-radius:99px;padding:6px 13px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}h1{font-size:clamp(40px,6vw,66px);line-height:1.05;letter-spacing:-2px;margin:18px 0}.lead{color:var(--muted);font-size:17px;max-width:590px}.buttons{display:flex;gap:11px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:12px;text-decoration:none;font-weight:750;font-size:13px;border:1px solid var(--line);cursor:pointer}.primary{background:var(--green);color:white;border-color:var(--green)}.secondary{background:var(--panel);color:var(--text)}.heroLogo{background:var(--green);min-height:260px;border-radius:28px;display:grid;place-items:center;position:relative;overflow:hidden}.heroLogo img{width:160px;height:160px;object-fit:contain;background:#fff;padding:12px;border-radius:28px;z-index:1}.heroLogo:before,.heroLogo:after{content:"";position:absolute;border:1px solid #ffffff40;border-radius:50%;width:280px;height:280px}.heroLogo:after{width:190px;height:190px}
-section.content{padding:54px 0}.heading{font-size:30px;letter-spacing:-.7px;margin:0 0 7px}.sub{color:var(--muted);margin:0 0 25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:21px}.icon{font-size:25px;margin-bottom:8px}.card h3{margin:3px 0 7px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px}.searchbox{display:flex;gap:10px;max-width:650px;margin:20px 0 18px}.searchbox input{width:100%;min-width:0;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:15px}.searchbox button{background:var(--green);color:white;border:0;border-radius:12px;padding:0 18px;font-weight:800}.catalogue{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.category{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:19px}.category h3{margin:0 0 12px;font-size:18px}.med{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.medname{font-weight:650;font-size:14px}.med small{display:block;color:var(--muted);font-size:11px;font-weight:400}.med .btn{white-space:nowrap;padding:8px 10px;font-size:11px}.notice{margin-top:18px;padding:14px 16px;border-left:3px solid var(--green);background:var(--panel);border-radius:8px;color:var(--muted);font-size:13px}
-.hours{display:grid;gap:8px}.hours div{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:14px}.hours strong{color:var(--text)}
-.map{width:100%;height:310px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
-.band{background:var(--panel2);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.band h2{margin:0 0 6px}.band p{margin:0;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:760px){.hero{padding:43px 0}.heroGrid{grid-template-columns:1fr}.heroLogo{min-height:190px}.heroLogo img{width:120px;height:120px}.grid,.catalogue{grid-template-columns:1fr}.heading{font-size:26px}.searchbox{flex-direction:column}.searchbox button{padding:13px}.med{align-items:flex-start}.med .btn{max-width:145px;text-align:center}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f1f3f6;color:#222}
+header{background:#087d45;color:white;padding:15px;position:sticky;top:0;z-index:10}
+.top{max-width:1100px;margin:auto;display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:bold}
+.logo span{color:#d5ffdf}
+.search{flex:1;min-width:180px}
+.search input{width:100%;padding:12px;border:0;border-radius:5px;font-size:15px}
+.cart-btn{background:#fff;color:#087d45;padding:11px 15px;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
+.hero{background:linear-gradient(120deg,#087d45,#27b66e);color:white;padding:35px 20px;text-align:center}
+.hero h1{font-size:30px;margin-bottom:10px}
+.hero p{margin-bottom:15px}
+.hero button{padding:11px 22px;background:white;color:#087d45;border:0;border-radius:5px;font-weight:bold}
+.categories{display:flex;gap:10px;overflow-x:auto;padding:15px;background:white}
+.categories button{border:1px solid #ddd;background:white;padding:10px 16px;border-radius:20px;white-space:nowrap;cursor:pointer}
+.categories button.active{background:#087d45;color:white}
+.container{max-width:1100px;margin:20px auto;padding:0 12px}
+.section-title{font-size:21px;margin-bottom:15px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:white;padding:14px;border-radius:8px;box-shadow:0 1px 5px #ddd;text-align:center}
+.product-img{height:125px;display:flex;align-items:center;justify-content:center;font-size:65px;background:#f5faf6;border-radius:6px;margin-bottom:12px}
+.card h3{font-size:15px;min-height:36px}
+.price{color:#087d45;font-weight:bold;font-size:18px;margin:10px}
+.old{color:#888;text-decoration:line-through;font-size:12px}
+.card button{width:100%;padding:10px;border:0;border-radius:5px;background:#087d45;color:white;font-weight:bold;cursor:pointer}
+.card button:hover{background:#056337}
+.info{background:white;padding:20px;border-radius:8px;margin-top:20px;line-height:1.8}
+.cart-box{background:white;padding:20px;border-radius:8px;margin:20px auto;max-width:1100px}
+.cart-item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #ddd;align-items:center}
+.cart-item button{padding:5px 10px;border:0;border-radius:4px;cursor:pointer}
+.order-btn{background:#087d45;color:white;border:0;padding:14px;width:100%;border-radius:5px;margin-top:15px;font-size:16px;font-weight:bold;cursor:pointer}
+footer{background:#123d2a;color:white;text-align:center;padding:25px;margin-top:30px;line-height:1.8}
+.note{font-size:12px;color:#666;margin-top:12px}
+.hidden{display:none}
+@media(max-width:750px){.products{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:24px}}
+@media(max-width:360px){.products{grid-template-columns:1fr}}
 </style>
 </head>
+
 <body>
-<header class="top"><div class="wrap topin"><div class="brand"><img class="logo" src="https://r26732974-ctrl.github.io/kabir-pharma/logo.png" alt="Kabir Pharma logo"><span>KABIR PHARMA</span></div><small>Your neighbourhood pharmacy</small></div></header>
-<main>
-<section class="hero"><div class="wrap heroGrid"><div><span class="tag">✦ Pharmacy &amp; Healthcare</span><h1>Care that’s<br>close to home.</h1><p class="lead">Welcome to Kabir Pharma. Browse our medicine catalogue and contact us to confirm availability in Chikni, Madhepura, Bihar.</p><div class="buttons"><a class="btn primary" href="tel:+918986595782">☎ Call us</a><a class="btn secondary" href="https://wa.me/918986595782" target="_blank" rel="noopener">WhatsApp</a><a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Kabir+Pharma+Chikni+Madhepura+Bihar" target="_blank" rel="noopener">⌖ Directions</a></div></div><div class="heroLogo"><img src="https://r26732974-ctrl.github.io/kabir-pharma/logo.png" alt="Kabir Pharma logo"></div></div></section>
 
-<section class="content"><div class="wrap"><h2 class="heading">Medicine catalogue</h2><p class="sub">Search the sample list below. Tap any medicine to ask Kabir Pharma about its availability and price on WhatsApp.</p>
-<div class="searchbox"><input id="medicineSearch" type="search" placeholder="Search medicine or category..." aria-label="Search medicine or category"><button type="button" onclick="filterMedicines()">Search</button></div>
-<div class="catalogue" id="catalogue">
-<div class="category"><h3>💊 Tablets &amp; Capsules</h3>
-<div class="med"><div class="medname">Paracetamol<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Paracetamol')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Cetirizine<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Cetirizine')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Pantoprazole<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Pantoprazole')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Vitamin C tablets<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Vitamin C tablets')">Confirm on WhatsApp</button></div>
+<header>
+<div class="top">
+<div class="logo">💊 KABIR <span>PHARMA</span></div>
+<div class="search">
+<input id="search" type="search" placeholder="Search products..." oninput="renderProducts()">
 </div>
-<div class="category"><h3>🧴 Syrups</h3>
-<div class="med"><div class="medname">Cough syrup<small>Product type; exact brand to be confirmed</small></div><button class="btn primary" onclick="askMedicine('Cough syrup')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Antacid suspension<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Antacid suspension')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Multivitamin syrup<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Multivitamin syrup')">Confirm on WhatsApp</button></div>
+<button class="cart-btn" onclick="showCart()">🛒 Cart (<span id="count">0</span>)</button>
 </div>
-<div class="category"><h3>🩺 Prescription medicines</h3>
-<div class="med"><div class="medname">Prescription antibiotics<small>Only against a valid prescription, as required by law</small></div><button class="btn primary" onclick="askMedicine('Prescription antibiotic (please advise based on valid prescription)')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Other prescription medicines<small>Share prescription privately in WhatsApp if requested</small></div><button class="btn primary" onclick="askMedicine('Prescription medicine enquiry')">Confirm on WhatsApp</button></div>
-</div>
-<div class="category"><h3>🧃 ORS &amp; First Aid</h3>
-<div class="med"><div class="medname">ORS sachets<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('ORS sachets')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Adhesive bandages<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Adhesive bandages')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Antiseptic solution<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Antiseptic solution')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Cotton &amp; gauze<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Cotton and gauze')">Confirm on WhatsApp</button></div>
-</div>
-<div class="category"><h3>🧼 Personal Care</h3>
-<div class="med"><div class="medname">Hand sanitiser<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Hand sanitiser')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Antiseptic cream<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Antiseptic cream')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Bandage roll<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Bandage roll')">Confirm on WhatsApp</button></div>
-</div>
-<div class="category"><h3>🌿 Vitamins &amp; Supplements</h3>
-<div class="med"><div class="medname">Vitamin D supplement<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Vitamin D supplement')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Calcium supplement<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Calcium supplement')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Iron supplement<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Iron supplement')">Confirm on WhatsApp</button></div>
-</div>
-<div class="category"><h3>👶 Baby Care</h3>
-<div class="med"><div class="medname">Baby wipes<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Baby wipes')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Baby skincare products<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Baby skincare products')">Confirm on WhatsApp</button></div>
-</div>
-<div class="category"><h3>🩸 Diabetes Care &amp; Medical Devices</h3>
-<div class="med"><div class="medname">Glucose test strips<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Glucose test strips')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Digital thermometer<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Digital thermometer')">Confirm on WhatsApp</button></div>
-<div class="med"><div class="medname">Blood pressure monitor<small>Example catalogue item</small></div><button class="btn primary" onclick="askMedicine('Blood pressure monitor')">Confirm on WhatsApp</button></div>
-</div>
-</div>
-<p class="notice"><strong>Important:</strong> This is an indicative catalogue, not a live stock list or a medical recommendation. Products, brands, prices and availability must be confirmed with the pharmacy. Prescription medicines are supplied only against a valid prescription and in accordance with applicable rules. Do not start, stop or change a medicine based only on this website.</p>
-</div></section>
+</header>
 
-<section class="content" style="padding-top:0"><div class="wrap"><h2 class="heading">Prescription assistance</h2><p class="sub">Need to ask about a prescribed medicine? Send your enquiry to us on WhatsApp.</p><div class="card"><div class="icon">📄</div><h3>Share a prescription enquiry</h3><p>Tap below to open WhatsApp, then attach your prescription there if needed. Please share it only with the pharmacy and avoid posting personal medical documents publicly.</p><div class="buttons"><a class="btn primary" href="https://wa.me/918986595782?text=Hello%20Kabir%20Pharma%2C%20I%20want%20to%20enquire%20about%20a%20prescription." target="_blank" rel="noopener">Send enquiry on WhatsApp</a></div></div></div></section>
+<section class="hero">
+<h1>Welcome to Kabir Pharma</h1>
+<p>Your trusted healthcare shopping destination</p>
+<button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+</section>
 
-<section class="content" style="padding-top:0"><div class="wrap"><h2 class="heading">About Kabir Pharma</h2><p class="sub">Your local pharmacy contact in Chikni, Madhepura.</p><div class="card"><p>At Kabir Pharma, we aim to make it easy for customers to contact the pharmacy, ask about medicine availability, and find store information. For medicine-related questions, please consult a qualified healthcare professional.</p></div></div></section>
+<div class="categories" id="categories">
+<button class="active" onclick="setCategory('All',this)">All Products</button>
+<button onclick="setCategory('Healthcare',this)">Healthcare</button>
+<button onclick="setCategory('Personal Care',this)">Personal Care</button>
+<button onclick="setCategory('First Aid',this)">First Aid</button>
+<button onclick="setCategory('Wellness',this)">Wellness</button>
+</div>
 
-<section class="content" style="padding-top:0"><div class="wrap"><h2 class="heading">Visit our pharmacy</h2><p class="sub">Store information and contact details.</p><div class="grid">
-<article class="card"><div class="icon">⌖</div><h3>Our Location</h3><p>Chikni, Madhepura,<br>Bihar, India</p></article>
-<article class="card"><div class="icon">◷</div><h3>Opening Hours</h3><div class="hours"><div><span>Morning</span><strong>8:00 AM – 12:00 PM</strong></div><div><span>Evening</span><strong>2:00 PM – 8:00 PM</strong></div></div></article>
-<article class="card"><div class="icon">☎</div><h3>Call Us</h3><p><a href="tel:+918986595782">+91 89865 95782</a><br>Tap the number to call.</p></article>
-</div></div></section>
-
-<section class="content" style="padding-top:0"><div class="wrap"><h2 class="heading">Find Kabir Pharma</h2><p class="sub">Chikni, Madhepura, Bihar, India. The map shows the locality, not a verified shop pin.</p><iframe class="map" title="Map showing Chikni, Madhepura, Bihar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Chikni%2C%20Madhepura%2C%20Bihar&amp;output=embed"></iframe></div></section>
-
-<section class="content" style="padding-top:0"><div class="wrap"><h2 class="heading">Customer feedback</h2><p class="sub">We welcome genuine feedback about your experience.</p><div class="card"><div class="icon">★</div><h3>Share your feedback</h3><p>Send your feedback directly to Kabir Pharma. Reviews will not be displayed publicly unless they are genuinely received and approved.</p><div class="buttons"><a class="btn secondary" href="https://wa.me/918986595782?text=Hello%20Kabir%20Pharma%2C%20I%20would%20like%20to%20share%20feedback." target="_blank" rel="noopener">Give feedback on WhatsApp</a></div></div></div></section>
-
-<section class="content" style="padding-top:0"><div class="wrap"><div class="band"><div><h2>Need to speak with us?</h2><p>Call or message Kabir Pharma during opening hours.</p></div><div class="buttons" style="margin:0"><a class="btn primary" href="tel:+918986595782">Call now</a><a class="btn secondary" href="https://wa.me/918986595782" target="_blank" rel="noopener">WhatsApp</a></div></div></div></section>
+<main class="container" id="shop">
+<h2 class="section-title">🛍️ Popular Products</h2>
+<div class="products" id="products"></div>
+<p class="note">Product listings are illustrative demo entries. Actual availability, prices and product details must be confirmed by the pharmacy.</p>
 </main>
-<footer><div class="wrap foot"><span>© <span id="year"></span> Kabir Pharma. All rights reserved.</span><span>Chikni, Madhepura, Bihar</span></div></footer>
+
+<section class="cart-box hidden" id="cart">
+<h2>🛒 Your Shopping Cart</h2>
+<div id="cartItems"></div>
+<h3 style="margin-top:15px">Total: ₹<span id="total">0</span></h3>
+<button class="order-btn" onclick="bookOrder()">📲 Book Order on WhatsApp</button>
+<p class="note">Your order message will open in WhatsApp. You must review and send it yourself.</p>
+</section>
+
+<section class="container">
+<div class="info">
+<h2>🏥 About Kabir Pharma</h2>
+<p>Welcome to Kabir Pharma, Chikni, Madhepura, Bihar.</p>
+<p>🕗 Morning: 8 AM – 12 PM</p>
+<p>🕑 Evening: 2 PM – 8 PM</p>
+<p>📦 Product availability and order confirmation are subject to pharmacy verification.</p>
+</div>
+<div class="info">
+<h3>Important Information</h3>
+<p>Prescription-required medicines will only be supplied after verification of a valid prescription by the pharmacist. No medicine order is confirmed until the pharmacy accepts it.</p>
+</div>
+</section>
+
+<footer>
+<h2>💊 KABIR PHARMA</h2>
+<p>Chikni, Madhepura, Bihar</p>
+<p>Healthcare | Quality | Trust</p>
+<p>© 2026 Kabir Pharma. All Rights Reserved.</p>
+</footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-function askMedicine(name){const msg='Hello Kabir Pharma, please confirm the availability and price of: '+name+'.';window.open('https://wa.me/918986595782?text='+encodeURIComponent(msg),'_blank','noopener');}
-function filterMedicines(){const q=document.getElementById('medicineSearch').value.trim().toLowerCase();document.querySelectorAll('.category').forEach(cat=>{let visible=0;cat.querySelectorAll('.med').forEach(row=>{const match=!q||row.innerText.toLowerCase().includes(q)||cat.querySelector('h3').innerText.toLowerCase().includes(q);row.style.display=match?'flex':'none';if(match)visible++;});cat.style.display=visible?'block':'none';});}
-document.getElementById('medicineSearch').addEventListener('input',filterMedicines);
+
+// SET YOUR EXISTING WHATSAPP NUMBER HERE.
+// Use country code and digits only, without + or spaces.
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+const products = [
+ {id:1,name:"Digital Thermometer",price:120,category:"Healthcare",emoji:"🌡️"},
+ {id:2,name:"Hand Sanitizer",price:80,category:"Personal Care",emoji:"🧴"},
+ {id:3,name:"First Aid Bandage",price:50,category:"First Aid",emoji:"🩹"},
+ {id:4,name:"Face Mask Pack",price:60,category:"Personal Care",emoji:"😷"},
+ {id:5,name:"Hot Water Bag",price:180,category:"Healthcare",emoji:"♨️"},
+ {id:6,name:"Cotton Roll",price:45,category:"First Aid",emoji:"🧻"},
+ {id:7,name:"ORS Sachet",price:25,category:"Wellness",emoji:"🥤"},
+ {id:8,name:"Vitamin C Product",price:100,category:"Wellness",emoji:"🍊"}
+];
+
+let cart = [];
+let category = "All";
+
+function renderProducts(){
+ const search = document.getElementById("search").value.toLowerCase();
+ const list = products.filter(p =>
+  (category==="All" || p.category===category) &&
+  p.name.toLowerCase().includes(search)
+ );
+
+ document.getElementById("products").innerHTML = list.length ?
+ list.map(p=>`
+ <div class="card">
+ <div class="product-img">${p.emoji}</div>
+ <h3>${p.name}</h3>
+ <div class="price">₹${p.price}</div>
+ <button onclick="addToCart(${p.id})">Add to Cart</button>
+ </div>`).join("") :
+ "<p>No products found.</p>";
+}
+
+function setCategory(value,button){
+ category=value;
+ document.querySelectorAll(".categories button").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderProducts();
+}
+
+function addToCart(id){
+ const product=products.find(p=>p.id===id);
+ const item=cart.find(p=>p.id===id);
+ if(item)item.qty++;
+ else cart.push({...product,qty:1});
+ updateCart();
+}
+
+function updateCart(){
+ document.getElementById("count").textContent=
+ cart.reduce((sum,p)=>sum+p.qty,0);
+ document.getElementById("total").textContent=
+ cart.reduce((sum,p)=>sum+p.price*p.qty,0);
+
+ document.getElementById("cartItems").innerHTML=cart.length ?
+ cart.map(p=>`
+ <div class="cart-item">
+ <div>${p.emoji} <b>${p.name}</b><br>₹${p.price} × ${p.qty}</div>
+ <div>
+ <button onclick="changeQty(${p.id},-1)">−</button>
+ <button onclick="changeQty(${p.id},1)">+</button>
+ </div>
+ </div>`).join("") :
+ "<p>Your cart is empty.</p>";
+}
+
+function changeQty(id,change){
+ const item=cart.find(p=>p.id===id);
+ if(!item)return;
+ item.qty+=change;
+ if(item.qty<=0)cart=cart.filter(p=>p.id!==id);
+ updateCart();
+}
+
+function showCart(){
+ document.getElementById("cart").classList.remove("hidden");
+ document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+}
+
+function bookOrder(){
+ if(cart.length===0){
+  alert("Please add products to your cart first.");
+  return;
+ }
+
+ if(!/^91[0-9]{10}$/.test(WHATSAPP_NUMBER)){
+  alert("Please enter your existing WhatsApp number in the website code first.");
+  return;
+ }
+
+ let message="Hello Kabir Pharma! I want to enquire about this order:\n\n";
+ cart.forEach(p=>{
+  message+=p.name+" x "+p.qty+" = Rs. "+(p.price*p.qty)+"\n";
+ });
+
+ const total=cart.reduce((sum,p)=>sum+p.price*p.qty,0);
+ message+="\nEstimated Total: Rs. "+total;
+ message+="\n\nPlease confirm availability and order details.";
+
+ const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
+ window.open(url,"_blank");
+}
+
+renderProducts();
+updateCart();
+
 </script>
 </body>
 </html>

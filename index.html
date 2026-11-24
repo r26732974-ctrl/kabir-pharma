@@ -1,42 +1,34 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kabir Pharma Online Store</title>
+<title>Kabir Pharma</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial;background:#f1f3f6;color:#222}
-header{background:#087d45;color:white;padding:14px;position:sticky;top:0;z-index:5}
-.top{max-width:1200px;margin:auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.logo{font-size:22px;font-weight:bold}
-.search{flex:1;min-width:150px}
-.search input{width:100%;padding:12px;border:0;border-radius:5px}
-button{cursor:pointer}
-.cartbtn{padding:12px;background:white;color:#087d45;border:0;border-radius:5px;font-weight:bold}
-.hero{text-align:center;background:linear-gradient(120deg,#087d45,#29b66c);color:white;padding:35px 15px}
-.hero h1{font-size:28px;margin-bottom:10px}
-.categories{display:flex;gap:8px;overflow:auto;background:white;padding:14px}
-.categories button{padding:10px 14px;border:1px solid #ddd;background:white;border-radius:20px;white-space:nowrap}
-.categories button.active{background:#087d45;color:white}
-.container{max-width:1200px;margin:20px auto;padding:0 12px}
-.products{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.card{background:white;padding:12px;text-align:center;border-radius:7px}
-.pic{height:110px;background:#f2faf4;display:grid;place-items:center;font-size:55px;border-radius:5px;margin-bottom:10px}
-.card h3{font-size:14px;min-height:35px}
-.price{color:#087d45;font-weight:bold;font-size:18px;margin:9px}
-.card button{width:100%;padding:9px;background:#087d45;color:white;border:0;border-radius:4px;margin-top:5px}
-.card .buy{background:#ed9200}
-#load{display:block;margin:20px auto;padding:12px 28px;background:#087d45;color:white;border:0;border-radius:5px}
-.cart{background:white;padding:18px;margin:20px auto;max-width:1200px;border-radius:7px}
-.item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #ddd;gap:10px}
-.item button{padding:6px 12px}
-.order{width:100%;padding:14px;background:#087d45;color:white;border:0;border-radius:5px;margin-top:15px;font-weight:bold}
-.info{background:white;padding:20px;margin-top:15px;border-radius:7px;line-height:1.8}
-footer{background:#123d2a;color:white;text-align:center;padding:25px;margin-top:25px}
-.small{font-size:12px;color:#777;margin-top:10px}
-@media(max-width:850px){.products{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.products{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:23px}}
+body{font-family:Arial,sans-serif;background:#f4f7f5;color:#222}
+header{background:#087d45;color:white;padding:16px}
+.top{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:bold}
+button{cursor:pointer;border:0;border-radius:6px;padding:12px;background:#087d45;color:white;font-weight:bold}
+input{width:100%;padding:13px;border:1px solid #ccc;border-radius:6px;margin:8px 0;font-size:16px}
+.login{max-width:420px;margin:35px auto;background:white;padding:22px;border-radius:12px;box-shadow:0 2px 12px #ddd}
+.login button{width:100%;margin-top:8px}
+.hero{text-align:center;background:linear-gradient(120deg,#087d45,#27b66e);color:white;padding:35px 15px}
+.container{max-width:1100px;margin:20px auto;padding:0 12px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:white;padding:14px;border-radius:9px;text-align:center;box-shadow:0 1px 5px #ddd}
+.product-img{font-size:55px;padding:15px;background:#f0f8f2;margin-bottom:10px}
+.card button{width:100%;margin-top:10px}
+.price{color:#087d45;font-weight:bold;margin:10px}
+.categories{display:flex;gap:8px;overflow:auto;padding:14px;background:white}
+.categories button{white-space:nowrap}
+.cart{background:white;padding:20px;margin:20px auto;max-width:1100px}
+.hidden{display:none!important}
+footer{background:#123d2a;color:white;text-align:center;padding:25px;margin-top:30px}
+@media(max-width:750px){.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:360px){.products{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -44,287 +36,195 @@ footer{background:#123d2a;color:white;text-align:center;padding:25px;margin-top:
 <header>
 <div class="top">
 <div class="logo">💊 KABIR PHARMA</div>
-<div class="search">
-<input id="search" placeholder="Search products..." oninput="resetProducts()">
-</div>
-<button class="cartbtn" onclick="showCart()">🛒 Cart <span id="count">0</span></button>
+<button id="logout" class="hidden" onclick="logout()">Logout</button>
 </div>
 </header>
 
+<section id="loginArea" class="login">
+<h2>Welcome to Kabir Pharma</h2>
+<p style="margin:10px 0">Login karke products dekhein</p>
+
+<div id="customerLogin">
+<h3>Customer Mobile OTP Login</h3>
+<input id="phone" placeholder="+91 9876543210" type="tel">
+<div id="recaptcha-container"></div>
+<button onclick="sendOTP()">Send OTP</button>
+<input id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify OTP</button>
+</div>
+
+<hr style="margin:20px 0">
+
+<div id="ownerLogin">
+<h3>Owner Login</h3>
+<input id="email" type="email" placeholder="Owner email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="ownerLogin()">Login as Owner</button>
+</div>
+<p id="message" style="margin-top:12px;color:#b00020"></p>
+</section>
+
+<div id="website" class="hidden">
 <section class="hero">
 <h1>Welcome to Kabir Pharma</h1>
-<p>Your Healthcare Shopping Destination</p>
+<p>Your trusted healthcare shopping destination</p>
 </section>
 
-<div class="categories" id="categories"></div>
+<div class="categories">
+<button onclick="setCategory('All')">All Products</button>
+<button onclick="setCategory('Healthcare')">Healthcare</button>
+<button onclick="setCategory('Personal Care')">Personal Care</button>
+<button onclick="setCategory('First Aid')">First Aid</button>
+<button onclick="setCategory('Wellness')">Wellness</button>
+</div>
 
-<main class="container" id="shop">
-<h2>🛍️ All Products</h2>
-<p id="result" class="small"></p>
+<main class="container">
+<h2 style="margin-bottom:15px">🛍️ Popular Products</h2>
+<input id="search" placeholder="Search products..." oninput="renderProducts()">
 <div class="products" id="products"></div>
-<button id="load" onclick="loadMore()">Load More Products</button>
-<p class="small">Actual prices and availability are subject to pharmacy confirmation.</p>
 </main>
 
-<section class="cart" id="cart" style="display:none">
-<h2>🛒 Shopping Cart</h2>
-<div id="items"></div>
-<h3>Total: ₹<span id="total">0</span></h3>
-<button class="order" onclick="bookOrder()">📲 BOOK ORDER ON WHATSAPP</button>
+<section class="cart">
+<h2>🛒 Shopping Cart (<span id="count">0</span>)</h2>
+<div id="cartItems"></div>
+<h3 style="margin-top:12px">Total: ₹<span id="total">0</span></h3>
+<button style="width:100%;margin-top:15px" onclick="bookOrder()">📲 Book Order on WhatsApp</button>
 </section>
 
-<section class="container">
-<div class="info">
-<h2>🏥 Kabir Pharma</h2>
-<p>📍 Chikni, Madhepura, Bihar</p>
-<p>🕗 8 AM – 12 PM</p>
-<p>🕑 2 PM – 8 PM</p>
+<div class="container">
+<div class="card">
+<h3>🏥 About Kabir Pharma</h3>
+<p>Chikni, Madhepura, Bihar</p>
+<p>Morning: 8 AM–12 PM</p>
+<p>Evening: 2 PM–8 PM</p>
 </div>
-<div class="info">
-<strong>Important:</strong>
-<p>Prescription medicines will only be supplied after valid prescription verification by the pharmacist and compliance with applicable laws.</p>
 </div>
-</section>
+</div>
 
 <footer>
 <h2>💊 KABIR PHARMA</h2>
 <p>Chikni, Madhepura, Bihar</p>
 <p>Healthcare | Quality | Trust</p>
-<p>© 2026 Kabir Pharma</p>
 </footer>
 
-<script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import {
+ getAuth, RecaptchaVerifier, signInWithPhoneNumber,
+ signInWithEmailAndPassword, signOut
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-// Apna existing WhatsApp number yahan daalein
-const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+const firebaseConfig={
+ apiKey:"AIzaSyB_AsLlnwfvk9AQr8D6aR9cLvM5AJpMjiU",
+ authDomain:"kabir-pharma.firebaseapp.com",
+ projectId:"kabir-pharma",
+ storageBucket:"kabir-pharma.firebasestorage.app",
+ messagingSenderId:"888862653840",
+ appId:"1:888862653840:web:62e751c07a7dd74f4d4715",
+ measurementId:"G-ZHRR1F3YKD"
+};
 
-// Sample catalogue. Add verified products here.
-// Format: [Product name, price, category, emoji]
-
-const products = [
-["Digital Thermometer",120,"Healthcare","🌡️"],
-["BP Monitor",1250,"Healthcare","🩺"],
-["Pulse Oximeter",850,"Healthcare","💓"],
-["Glucometer",650,"Healthcare","🩸"],
-["Weighing Scale",900,"Healthcare","⚖️"],
-["Hot Water Bag",180,"Healthcare","♨️"],
-["Heating Pad",450,"Healthcare","🔥"],
-["Nebulizer Machine",1100,"Healthcare","💨"],
-["Steam Vaporizer",350,"Healthcare","🌫️"],
-["First Aid Kit",250,"Healthcare","🧰"],
-["Hand Sanitizer",80,"Personal Care","🧴"],
-["Hand Wash",95,"Personal Care","🫧"],
-["Bath Soap",45,"Personal Care","🧼"],
-["Face Wash",120,"Personal Care","🧴"],
-["Toothpaste",65,"Personal Care","🦷"],
-["Toothbrush",35,"Personal Care","🪥"],
-["Mouthwash",110,"Personal Care","💧"],
-["Cotton Buds",40,"Personal Care","🧹"],
-["Tissue Pack",50,"Personal Care","🧻"],
-["Wet Wipes",75,"Personal Care","🧽"],
-["Baby Diapers Small",350,"Baby Care","👶"],
-["Baby Diapers Medium",400,"Baby Care","👶"],
-["Baby Diapers Large",450,"Baby Care","👶"],
-["Baby Wipes",90,"Baby Care","🧻"],
-["Baby Shampoo",130,"Baby Care","🧴"],
-["Baby Soap",55,"Baby Care","🧼"],
-["Baby Lotion",145,"Baby Care","🧴"],
-["Baby Powder",85,"Baby Care","🍼"],
-["Feeding Bottle",120,"Baby Care","🍼"],
-["Baby Rash Cream",110,"Baby Care","👶"],
-["Bandage Pack",35,"First Aid","🩹"],
-["Sterile Gauze",50,"First Aid","🩺"],
-["Cotton Roll",45,"First Aid","☁️"],
-["Medical Tape",30,"First Aid","🩹"],
-["Elastic Bandage",80,"First Aid","🩹"],
-["Wound Dressing",65,"First Aid","🧴"],
-["Disposable Gloves",70,"First Aid","🧤"],
-["Surgical Mask Pack",60,"First Aid","😷"],
-["Medical Scissors",90,"First Aid","✂️"],
-["Crepe Bandage",75,"First Aid","🩹"],
-["Vitamin C Product",150,"Wellness","🍊"],
-["Multivitamin Product",220,"Wellness","💊"],
-["Shaker Bottle",180,"Wellness","🥤"],
-["Water Bottle",250,"Wellness","🚰"],
-["Electrolyte Powder",35,"Wellness","🥤"],
-["Supplement Container",190,"Wellness","🫙"],
-["Resistance Band",150,"Wellness","🏋️"],
-["Yoga Mat",450,"Wellness","🧘"],
-["Skipping Rope",120,"Wellness","🏃"],
-["Gel Pack",140,"Wellness","❄️"],
-["Hair Oil",120,"Skin & Hair Care","🧴"],
-["Shampoo",140,"Skin & Hair Care","🧴"],
-["Conditioner",160,"Skin & Hair Care","🧴"],
-["Hair Comb",40,"Skin & Hair Care","💇"],
-["Moisturizer",180,"Skin & Hair Care","🧴"],
-["Sunscreen",220,"Skin & Hair Care","☀️"],
-["Lip Balm",65,"Skin & Hair Care","💄"],
-["Body Lotion",150,"Skin & Hair Care","🧴"],
-["Petroleum Jelly",55,"Skin & Hair Care","🫙"],
-["Face Cream",130,"Skin & Hair Care","🧴"],
-["Stethoscope",450,"Medical Supplies","🩺"],
-["Medical Tray",180,"Medical Supplies","🧰"],
-["Digital Timer",120,"Medical Supplies","⏱️"],
-["Kidney Tray",150,"Medical Supplies","🥣"],
-["Disposable Apron",35,"Medical Supplies","🥼"],
-["Medical Scissors",100,"Medical Supplies","✂️"],
-["Disposable Syringe Pack",80,"Medical Supplies","💉"],
-["Measuring Cup",35,"Medical Supplies","🥛"],
-["Medicine Box",150,"Medical Supplies","📦"],
-["Face Shield",90,"Medical Supplies","🛡️"],
-["Ice Pack",120,"Health Accessories","🧊"],
-["Knee Support",220,"Health Accessories","🦵"],
-["Wrist Support",180,"Health Accessories","🖐️"],
-["Ankle Support",200,"Health Accessories","🦶"],
-["Cervical Pillow",450,"Health Accessories","🛏️"],
-["Walking Stick",350,"Health Accessories","🦯"],
-["Arm Sling",160,"Health Accessories","💪"],
-["Back Support Belt",550,"Health Accessories","🩹"],
-["Knee Cap Pair",240,"Health Accessories","🦵"],
-["Hot Water Bottle Cover",75,"Health Accessories","♨️"],
-["Sanitary Pads",85,"Hygiene","🌸"],
-["Panty Liners",60,"Hygiene","🌸"],
-["Menstrual Cup",250,"Hygiene","🌸"],
-["Seat Sanitizer",90,"Hygiene","🧴"],
-["Hand Towels",100,"Hygiene","🧻"],
-["Toilet Paper",45,"Hygiene","🧻"],
-["Disposable Razor",50,"Hygiene","🪒"],
-["Shaving Cream",90,"Hygiene","🫧"],
-["Nail Cutter",35,"Hygiene","✂️"],
-["Hygiene Kit",180,"Hygiene","🧼"],
-["Medicine Organizer",90,"Daily Essentials","📦"],
-["Pill Cutter",65,"Daily Essentials","💊"],
-["Pill Reminder Box",80,"Daily Essentials","🗓️"],
-["First Aid Pouch",180,"Daily Essentials","🎒"],
-["Reusable Ice Bag",150,"Daily Essentials","🧊"],
-["Mattress Protector",350,"Daily Essentials","🛏️"],
-["Magnifying Glass",100,"Daily Essentials","🔍"],
-["Glasses Case",70,"Daily Essentials","👓"],
-["Reusable Face Mask",50,"Daily Essentials","😷"],
-["Room Thermometer",180,"Daily Essentials","🌡️"]
-].map((p,i)=>({id:i+1,name:p[0],price:p[1],category:p[2],emoji:p[3]}));
-
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+let confirmation=null;
 let cart=[];
 let category="All";
-let shown=20;
 
-const categoryList=["All",...new Set(products.map(p=>p.category))];
+const products=[
+{id:1,name:"Digital Thermometer",price:120,category:"Healthcare",emoji:"🌡️"},
+{id:2,name:"Hand Sanitizer",price:80,category:"Personal Care",emoji:"🧴"},
+{id:3,name:"First Aid Bandage",price:50,category:"First Aid",emoji:"🩹"},
+{id:4,name:"Face Mask Pack",price:60,category:"Personal Care",emoji:"😷"},
+{id:5,name:"Hot Water Bag",price:180,category:"Healthcare",emoji:"♨️"},
+{id:6,name:"Cotton Roll",price:45,category:"First Aid",emoji:"🧻"},
+{id:7,name:"ORS Sachet",price:25,category:"Wellness",emoji:"🥤"},
+{id:8,name:"Vitamin C Product",price:100,category:"Wellness",emoji:"🍊"}
+];
 
-function makeCategories(){
- document.getElementById("categories").innerHTML=
- categoryList.map(c=>`
- <button class="${c==="All"?"active":""}" onclick="setCategory('${c}',this)">${c}</button>
- `).join("");
-}
+const $=id=>document.getElementById(id);
+function showMessage(s){$("message").textContent=s}
 
-function getFiltered(){
- let q=document.getElementById("search").value.toLowerCase();
- return products.filter(p=>
- (category==="All"||p.category===category)&&
- p.name.toLowerCase().includes(q)
- );
-}
+window.sendOTP=async()=>{
+ try{
+  if(!window.recaptchaVerifier){
+   window.recaptchaVerifier=new RecaptchaVerifier(auth,"recaptcha-container",{size:"normal"});
+  }
+  confirmation=await signInWithPhoneNumber(auth,$("phone").value,window.recaptchaVerifier);
+  showMessage("OTP bhej diya gaya hai.");
+ }catch(e){showMessage(e.message)}
+};
 
-function renderProducts(){
- let filtered=getFiltered();
- document.getElementById("result").textContent=
- "Showing "+Math.min(shown,filtered.length)+" of "+filtered.length+" matching products | "+products.length+" catalogue products";
+window.verifyOTP=async()=>{
+ try{
+  if(!confirmation)throw Error("Pehle Send OTP dabayein.");
+  await confirmation.confirm($("otp").value);
+ }catch(e){showMessage(e.message)}
+};
 
- document.getElementById("products").innerHTML=
- filtered.slice(0,shown).map(p=>`
+window.ownerLogin=async()=>{
+ try{
+  await signInWithEmailAndPassword(auth,$("email").value,$("password").value);
+ }catch(e){showMessage(e.message)}
+};
+
+auth.onAuthStateChanged(user=>{
+ $("loginArea").classList.toggle("hidden",!!user);
+ $("website").classList.toggle("hidden",!user);
+ $("logout").classList.toggle("hidden",!user);
+ if(user){renderProducts();updateCart()}
+});
+
+window.logout=()=>signOut(auth);
+
+window.setCategory=value=>{category=value;renderProducts()};
+
+window.renderProducts=()=>{
+ const search=$("search").value.toLowerCase();
+ const list=products.filter(p=>(category==="All"||p.category===category)&&p.name.toLowerCase().includes(search));
+ $("products").innerHTML=list.map(p=>`
  <div class="card">
- <div class="pic">${p.emoji}</div>
+ <div class="product-img">${p.emoji}</div>
  <h3>${p.name}</h3>
  <div class="price">₹${p.price}</div>
  <button onclick="addToCart(${p.id})">Add to Cart</button>
- <button class="buy" onclick="buyNow(${p.id})">Buy Now</button>
- </div>
- `).join("")||"<p>No products found.</p>";
+ </div>`).join("")||"<p>No products found.</p>";
+};
 
- document.getElementById("load").style.display=
- shown<filtered.length?"block":"none";
-}
-
-function resetProducts(){shown=20;renderProducts()}
-
-function loadMore(){
- shown+=20;
- renderProducts();
-}
-
-function setCategory(c,btn){
- category=c;
- shown=20;
- document.querySelectorAll(".categories button").forEach(b=>b.classList.remove("active"));
- btn.classList.add("active");
- renderProducts();
-}
-
-function addToCart(id){
- let p=products.find(x=>x.id===id);
- let item=cart.find(x=>x.id===id);
- if(item)item.qty++;
- else cart.push({...p,qty:1});
+window.addToCart=id=>{
+ const p=products.find(x=>x.id===id);
+ const item=cart.find(x=>x.id===id);
+ if(item)item.qty++;else cart.push({...p,qty:1});
  updateCart();
- alert(p.name+" added to cart!");
-}
-
-function buyNow(id){
- addToCart(id);
- showCart();
-}
+};
 
 function updateCart(){
- document.getElementById("count").textContent=
- cart.reduce((s,p)=>s+p.qty,0);
-
- document.getElementById("total").textContent=
- cart.reduce((s,p)=>s+p.price*p.qty,0);
-
- document.getElementById("items").innerHTML=
- cart.length?cart.map(p=>`
- <div class="item">
- <div>${p.emoji} <b>${p.name}</b><br>₹${p.price} × ${p.qty}</div>
- <div>
+ $("count").textContent=cart.reduce((s,p)=>s+p.qty,0);
+ $("total").textContent=cart.reduce((s,p)=>s+p.price*p.qty,0);
+ $("cartItems").innerHTML=cart.map(p=>`
+ <p style="padding:10px;border-bottom:1px solid #ddd">
+ ${p.emoji} ${p.name} × ${p.qty}
  <button onclick="changeQty(${p.id},-1)">−</button>
  <button onclick="changeQty(${p.id},1)">+</button>
- </div>
- </div>
- `).join(""):"<p>Your cart is empty.</p>";
+ </p>`).join("")||"Cart empty";
 }
 
-function changeQty(id,n){
- let p=cart.find(x=>x.id===id);
+window.changeQty=(id,n)=>{
+ const p=cart.find(x=>x.id===id);
  if(!p)return;
  p.qty+=n;
  if(p.qty<=0)cart=cart.filter(x=>x.id!==id);
  updateCart();
-}
+};
 
-function showCart(){
- document.getElementById("cart").style.display="block";
- updateCart();
- document.getElementById("cart").scrollIntoView({behavior:"smooth"});
-}
-
-function bookOrder(){
- if(!cart.length){alert("Cart is empty!");return}
- if(!/^91[0-9]{10}$/.test(WHATSAPP_NUMBER)){
- alert("Please enter the existing WhatsApp number in the code.");
- return;
- }
- let msg="Hello Kabir Pharma! My order enquiry:\n\n";
- cart.forEach(p=>msg+=p.name+" x "+p.qty+" = Rs. "+p.price*p.qty+"\n");
- let total=cart.reduce((s,p)=>s+p.price*p.qty,0);
- msg+="\nEstimated Total: Rs. "+total;
- msg+="\nPlease confirm availability and final price.";
- window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
-}
-
-makeCategories();
-renderProducts();
-updateCart();
-
+window.bookOrder=()=>{
+ if(!cart.length)return alert("Cart empty hai.");
+ const number="91XXXXXXXXXX";
+ if(!/^91\d{10}$/.test(number))return alert("Code mein apna WhatsApp number set karein.");
+ let msg="Hello Kabir Pharma! Order enquiry:\n";
+ cart.forEach(p=>msg+=`${p.name} x ${p.qty} = Rs. ${p.price*p.qty}\n`);
+ msg+="Please confirm availability.";
+ window.open("https://wa.me/"+number+"?text="+encodeURIComponent(msg),"_blank");
+};
 </script>
 </body>
 </html>

@@ -1,132 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kabir Pharma | Chikni, Madhepura</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Kabir Pharma</title>
 <style>
-:root{--green:#087f5b;--deep:#07543f;--mint:#e8f6f0;--ink:#18332b;--muted:#65766f;--line:#dce9e2;--bg:#f7fbf8}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:var(--deep);color:white;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:1px}.brand img{width:42px;height:42px;object-fit:contain;background:white;border-radius:12px}
-header small{color:#d5eee3}.wrap{max-width:1080px;margin:auto;padding:28px 18px}
-.hero{background:linear-gradient(120deg,#e6f5ee,#f7fbf8);padding:46px 18px}.hero-in{max-width:1040px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-h1{font-size:clamp(32px,6vw,52px);margin:8px 0;color:var(--deep)}.hero p{color:var(--muted);max-width:570px;line-height:1.6}
-.btn,button{border:0;border-radius:10px;padding:11px 15px;background:var(--green);color:white;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-.btn.alt,button.alt{background:white;color:var(--deep);border:1px solid var(--line)}button.danger{background:#b42318}.small{font-size:13px;color:var(--muted)}
-h2{color:var(--deep);margin:0 0 8px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.search{display:flex;gap:8px;margin:18px 0}.search input{flex:1}
-input,textarea,select{width:100%;padding:12px;border:1px solid #cbdad1;border-radius:9px;font:inherit;background:white;color:var(--ink);margin:5px 0 12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
-.card{background:white;border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:0 5px 18px #173d2a0a}
-.product h3{margin:4px 0 8px}.product p{margin:5px 0;color:var(--muted);font-size:14px}.product .price{font-weight:800;color:var(--deep);font-size:17px}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hidden{display:none!important}
-#admin{background:#eff8f3;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:22px}
-.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
-footer{background:#092f25;color:#d5eee3;padding:24px 18px;text-align:center;margin-top:35px}
-.modal{max-width:420px;margin:30px auto}
-.notice{background:#fff8e6;border-left:4px solid #d99a17;padding:12px;border-radius:8px;color:#664b12;font-size:13px;line-height:1.5}
-@media(max-width:600px){.hero{padding:32px 18px}.search{flex-direction:column}.wrap{padding:22px 14px}}
+:root{--green:#16834a;--dark:#116238;--pale:#eaf7ef;--ink:#183126;--muted:#68786f;--line:#dce8df;--bg:#f5faf6}
+*{box-sizing:border-box}body{margin:0;font-family:Arial, sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#116238,#1b9657);color:#fff;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:25px;font-weight:800}.brand small{display:block;font-size:12px;font-weight:400;margin-top:4px;opacity:.9}
+header button{background:#fff;color:var(--dark);border:0;border-radius:9px;padding:10px 15px;font-weight:700}
+main{max-width:1150px;margin:24px auto;padding:0 15px}.notice{background:#fff8df;border:1px solid #f1dfa1;padding:12px 14px;border-radius:10px;color:#6b5512;font-size:13px;line-height:1.5}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select{flex:1;min-width:160px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #cbdacf;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}
+textarea{min-height:85px;resize:vertical}button{cursor:pointer}
+.btn{border:0;border-radius:8px;padding:11px 15px;background:var(--green);color:#fff;font-weight:700}.btn.secondary{background:#e6f3ea;color:var(--dark)}.btn.danger{background:#b83a3a}.btn.small{padding:7px 10px;font-size:12px}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px}
+.product{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 3px 12px #143b1b0a}
+.photo{height:165px;background:#edf5ef;display:flex;align-items:center;justify-content:center;color:#819187;font-size:13px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:contain}
+.pbody{padding:13px}.pbody h3{margin:0 0 7px;font-size:16px}.meta{font-size:12px;color:var(--muted);margin:4px 0}.price{font-size:18px;font-weight:800;color:var(--dark);margin:9px 0}.old{font-size:12px;color:#87938b;text-decoration:line-through;margin-left:6px}.tag{display:inline-block;background:var(--pale);color:var(--dark);padding:4px 7px;border-radius:5px;font-size:11px;margin:3px 3px 3px 0}.out{background:#fff0f0;color:#a22}.empty{background:#fff;padding:30px;text-align:center;border:1px dashed #cbdacf;border-radius:12px;color:var(--muted)}
+#ownerPanel{display:none;background:#fff;border:1px solid var(--line);padding:18px;border-radius:13px;margin:18px 0}
+.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:12px;font-weight:700;margin:0 0 6px;color:#52665a}.field.full{grid-column:1/-1}
+.preview{width:120px;height:100px;object-fit:contain;background:#edf5ef;border:1px solid var(--line);border-radius:8px;display:block;margin-top:8px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.panelhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.loginbox{max-width:420px;margin:35px auto;background:#fff;padding:24px;border-radius:14px;border:1px solid var(--line)}.loginbox h2{margin-top:0}
+footer{text-align:center;padding:25px;color:var(--muted);font-size:12px}
+@media(max-width:600px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}header{padding:15px}.brand{font-size:22px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="brand"><img src="https://r26732974-ctrl.github.io/kabir-pharma/logo.png" alt="Kabir Pharma logo"><span>KABIR PHARMA</span></div>
-  <small>Your neighbourhood pharmacy · Chikni, Madhepura</small>
+  <div class="brand">Kabir Pharma<small>Your trusted pharmacy • Chikni, Madhepura, Bihar</small></div>
+  <button id="ownerBtn" onclick="toggleOwner()">Owner Login</button>
 </header>
-<section class="hero"><div class="hero-in">
-  <div><span>✦ PHARMACY & HEALTHCARE</span><h1>Care that's<br>close to home.</h1>
-  <p>Browse our product catalogue and contact Kabir Pharma to confirm availability. For prescription medicines, a valid prescription is required.</p>
-  <div class="actions"><a class="btn" href="tel:+918986595782">☎ Call us</a><a class="btn alt" href="https://wa.me/918986595782" target="_blank" rel="noopener">WhatsApp</a></div></div>
-  <div class="card"><h2>Visit our store</h2><p>Chikni, Madhepura, Bihar</p><p>8 AM–12 PM · 2 PM–8 PM</p><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Kabir+Pharma+Chikni+Madhepura+Bihar" target="_blank" rel="noopener">Get directions</a></div>
-</div></section>
-
-<main class="wrap">
-  <div class="section-head"><div><h2>Medicine & product catalogue</h2><div class="small">Product availability and price should be confirmed with the pharmacy.</div></div><button class="alt" onclick="showLogin()">Owner Login</button></div>
-  <div class="search"><input id="search" placeholder="Search product or category..." oninput="renderProducts()"><button onclick="renderProducts()">Search</button></div>
-  <div id="products" class="grid"></div>
-
-  <section id="loginBox" class="card modal hidden">
-    <h2>Owner Login</h2><p class="small">Owner access only</p>
-    <label>Username</label><input id="username" autocomplete="username" placeholder="Enter username">
-    <label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter password">
-    <div class="actions"><button onclick="login()">Login</button><button class="alt" onclick="hideLogin()">Cancel</button></div>
-    <p id="loginError" class="small" style="color:#b42318"></p>
+<main>
+  <div class="notice">Medicine enquiries are handled through WhatsApp. Prescription medicines are supplied only after a valid prescription is checked. Product availability may change.</div>
+  <section id="loginArea" class="loginbox" style="display:none">
+    <h2>Owner Login</h2>
+    <p class="meta">Sign in to manage the product catalogue.</p>
+    <div class="field"><label>Username</label><input id="username" autocomplete="username" placeholder="Owner username"></div>
+    <div class="field" style="margin-top:12px"><label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password"></div>
+    <div class="actions"><button class="btn" onclick="login()">Login</button><button class="btn secondary" onclick="toggleOwner()">Cancel</button></div>
+    <p id="loginMsg" class="meta"></p>
   </section>
 
-  <section id="admin" class="hidden">
-    <div class="section-head"><div><h2>Owner Dashboard</h2><p class="small">Add and manage products shown on the public catalogue.</p></div><button class="danger" onclick="logout()">Logout</button></div>
+  <section id="ownerPanel">
+    <div class="panelhead"><div><h2 style="margin:0">Product Manager</h2><p class="meta">Add, edit or remove catalogue items.</p></div><button class="btn secondary" onclick="logout()">Logout</button></div>
     <form id="productForm" onsubmit="saveProduct(event)">
-      <input id="editId" type="hidden">
+      <input type="hidden" id="editId">
       <div class="formgrid">
-        <div><label>Product name *</label><input id="pname" required placeholder="e.g. Product name"></div>
-        <div><label>Category</label><select id="pcat"><option>Tablets & Capsules</option><option>Syrups</option><option>Prescription Medicines</option><option>ORS & First Aid</option><option>Personal Care</option><option>Vitamins & Supplements</option><option>Baby Care</option><option>Diabetes Care & Devices</option><option>Other</option></select></div>
-        <div><label>Brand / details</label><input id="pdetails" placeholder="Brand or pack size"></div>
-        <div><label>Price (₹)</label><input id="pprice" type="number" min="0" step="0.01" placeholder="Optional"></div>
-        <div><label>Stock quantity</label><input id="pstock" type="number" min="0" step="1" value="0"></div>
+        <div class="field"><label>Product name *</label><input id="pName" required maxlength="90" placeholder="Product name"></div>
+        <div class="field"><label>Category *</label><select id="pCategory" required><option value="">Choose category</option><option>Medicine</option><option>Personal Care</option><option>Baby Care</option><option>Health Devices</option><option>First Aid</option><option>Wellness</option><option>Other</option></select></div>
+        <div class="field"><label>Brand / Manufacturer</label><input id="pBrand" maxlength="70" placeholder="Brand name"></div>
+        <div class="field"><label>SKU / Product code</label><input id="pSku" maxlength="40" placeholder="Optional code"></div>
+        <div class="field"><label>MRP (₹)</label><input id="pMrp" type="number" min="0" step="0.01" placeholder="Maximum retail price"></div>
+        <div class="field"><label>Selling price (₹) *</label><input id="pPrice" type="number" min="0" step="0.01" required placeholder="Selling price"></div>
+        <div class="field"><label>Stock quantity *</label><input id="pStock" type="number" min="0" step="1" required value="0"></div>
+        <div class="field"><label>Low-stock alert threshold</label><input id="pThreshold" type="number" min="0" step="1" value="5"></div>
+        <div class="field"><label>Batch number (optional)</label><input id="pBatch" maxlength="40" placeholder="Batch number"></div>
+        <div class="field"><label>Expiry date (optional)</label><input id="pExpiry" type="month"></div>
+        <div class="field full"><label>Product photo</label><input id="pImage" type="file" accept="image/*" onchange="previewImage(event)"><img id="imagePreview" class="preview" alt="Product image preview" style="display:none"><small class="meta">Choose a clear product image. Demo stores it in this browser.</small></div>
+        <div class="field full"><label>Description</label><textarea id="pDescription" maxlength="500" placeholder="Product details, pack size, key information..."></textarea></div>
+        <div class="field"><label>Product visibility</label><select id="pStatus"><option value="active">Show in catalogue</option><option value="hidden">Hide from catalogue</option></select></div>
+        <div class="field"><label>Featured product?</label><select id="pFeatured"><option value="no">No</option><option value="yes">Yes</option></select></div>
       </div>
-      <div class="actions"><button type="submit">Save Product</button><button class="alt" type="button" onclick="resetForm()">Clear</button></div>
+      <div class="actions"><button class="btn" type="submit" id="saveBtn">Save Product</button><button class="btn secondary" type="button" onclick="resetForm()">Clear Form</button></div>
+      <p class="meta">Customer rating is calculated from customer reviews in a live review system; it is not manually assigned by the owner in this demo.</p>
     </form>
-    <h3>Manage products</h3><div id="manageList" class="grid"></div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+    <div class="panelhead"><h3>Inventory overview</h3><span id="inventoryStats" class="meta"></span></div>
+    <div id="manageList"></div>
   </section>
 
-  <p class="notice" style="margin-top:24px"><b>Important:</b> This catalogue is for enquiry only, not medical advice. Prescription medicines are supplied only against a valid prescription and applicable rules. Do not start or change a medicine based on this website.</p>
+  <div class="toolbar">
+    <input id="search" placeholder="Search products..." oninput="renderProducts()">
+    <select id="filterCategory" onchange="renderProducts()"><option value="">All categories</option><option>Medicine</option><option>Personal Care</option><option>Baby Care</option><option>Health Devices</option><option>First Aid</option><option>Wellness</option><option>Other</option></select>
+    <select id="sortBy" onchange="renderProducts()"><option value="featured">Featured first</option><option value="name">Name A–Z</option><option value="priceLow">Price low to high</option><option value="priceHigh">Price high to low</option></select>
+  </div>
+  <div id="productGrid" class="products"></div>
 </main>
-<footer>© <span id="year"></span> Kabir Pharma · Chikni, Madhepura, Bihar · <a style="color:white" href="tel:+918986595782">+91 89865 95782</a></footer>
+<footer>Open: 8:00 AM–12:00 PM and 2:00 PM–8:00 PM<br>For availability and enquiries, contact Kabir Pharma.</footer>
+
 <script>
 /*
-  DEMO VERSION ONLY:
-  This static GitHub Pages version stores products in this browser's localStorage.
-  The owner username/password below are visible in the page source and are NOT secure.
-  Do not use this as production authentication. A secure live owner account requires
-  Firebase Authentication + Firestore security rules.
+ DEMO ONLY:
+ This front-end login is not secure and product data is stored only in this browser.
+ For a real public website, use Firebase Authentication, Firestore security rules,
+ and Firebase Storage for images. Never use this demo password for a real account.
 */
-const OWNER_USER = "owner";
-const OWNER_PASS = "Kabir@1234";
-const KEY = "kabir_pharma_products_v1";
-let isOwner = false;
-const starter = [
- {id:"s1",name:"Paracetamol",category:"Tablets & Capsules",details:"Example catalogue item",price:"",stock:0},
- {id:"s2",name:"Cetirizine",category:"Tablets & Capsules",details:"Example catalogue item",price:"",stock:0},
- {id:"s3",name:"Pantoprazole",category:"Tablets & Capsules",details:"Example catalogue item",price:"",stock:0},
- {id:"s4",name:"ORS",category:"ORS & First Aid",details:"Example catalogue item",price:"",stock:0},
- {id:"s5",name:"Digital thermometer",category:"Diabetes Care & Devices",details:"Example catalogue item",price:"",stock:0}
-];
-function getProducts(){try{return JSON.parse(localStorage.getItem(KEY))||starter}catch(e){return starter}}
-function setProducts(p){localStorage.setItem(KEY,JSON.stringify(p))}
-function renderProducts(){
- const q=document.getElementById("search").value.trim().toLowerCase();
- const list=getProducts().filter(p=>(p.name+" "+p.category+" "+(p.details||"")).toLowerCase().includes(q));
- document.getElementById("products").innerHTML=list.length?list.map(p=>`<article class="card product"><h3>${esc(p.name)}</h3><p>${esc(p.category)}</p><p>${esc(p.details||"")}</p>${p.price?`<div class="price">₹${esc(p.price)}</div>`:""}<p>${Number(p.stock)>0?"Stock: "+Number(p.stock):"Stock availability: Confirm with pharmacy"}</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/918986595782?text=${encodeURIComponent("Hello Kabir Pharma, please confirm availability and price of "+p.name+".")}">Enquire on WhatsApp</a></article>`).join(""):'<p class="small">No products found.</p>';
- if(isOwner)renderManage();
-}
-function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function showLogin(){document.getElementById("loginBox").classList.remove("hidden")}
-function hideLogin(){document.getElementById("loginBox").classList.add("hidden")}
+const DEMO_USER = "owner";
+const DEMO_PASS = "Kabir@1234";
+const STORE_KEY = "kabir_pharma_products_v2";
+let products = JSON.parse(localStorage.getItem(STORE_KEY) || "[]");
+let imageData = "";
+let loggedIn = false;
+
+function persist(){ try{localStorage.setItem(STORE_KEY,JSON.stringify(products));}catch(e){alert("Browser storage is full. Please use a smaller image or connect cloud storage.");} }
+function toggleOwner(){const a=document.getElementById("loginArea");a.style.display=a.style.display==="none"?"block":"none";}
 function login(){
- const u=document.getElementById("username").value,p=document.getElementById("password").value;
- if(u===OWNER_USER&&p===OWNER_PASS){isOwner=true;hideLogin();document.getElementById("admin").classList.remove("hidden");document.getElementById("loginError").textContent="";renderProducts()}
- else document.getElementById("loginError").textContent="Username or password is incorrect.";
+ const u=document.getElementById("username").value.trim(),p=document.getElementById("password").value;
+ if(u===DEMO_USER&&p===DEMO_PASS){loggedIn=true;document.getElementById("loginArea").style.display="none";document.getElementById("ownerPanel").style.display="block";document.getElementById("ownerBtn").style.display="none";renderManage();}
+ else document.getElementById("loginMsg").textContent="Username or password is incorrect.";
 }
-function logout(){isOwner=false;document.getElementById("admin").classList.add("hidden");resetForm()}
+function logout(){loggedIn=false;document.getElementById("ownerPanel").style.display="none";document.getElementById("ownerBtn").style.display="block";resetForm();}
+function previewImage(e){
+ const f=e.target.files&&e.target.files[0]; if(!f)return;
+ if(!f.type.startsWith("image/")){alert("Please choose an image file.");return;}
+ if(f.size>1500000){alert("Please choose an image under 1.5 MB for this browser demo.");e.target.value="";return;}
+ const r=new FileReader();r.onload=()=>{imageData=r.result;const im=document.getElementById("imagePreview");im.src=imageData;im.style.display="block";};r.readAsDataURL(f);
+}
+function resetForm(){
+ document.getElementById("productForm").reset();document.getElementById("editId").value="";
+ document.getElementById("pStock").value=0;document.getElementById("pThreshold").value=5;
+ document.getElementById("imagePreview").style.display="none";document.getElementById("imagePreview").src="";
+ document.getElementById("saveBtn").textContent="Save Product";imageData="";
+}
 function saveProduct(e){
- e.preventDefault();if(!isOwner)return;
- const products=getProducts(),id=document.getElementById("editId").value;
- const item={id:id||("p"+Date.now()),name:document.getElementById("pname").value.trim(),category:document.getElementById("pcat").value,details:document.getElementById("pdetails").value.trim(),price:document.getElementById("pprice").value,stock:Math.max(0,Number(document.getElementById("pstock").value)||0)};
- if(!item.name)return;
- const index=products.findIndex(x=>x.id===id);if(index>=0)products[index]=item;else products.unshift(item);
- setProducts(products);resetForm();renderProducts();alert("Product saved in this browser.");
+ e.preventDefault();if(!loggedIn)return;
+ const id=document.getElementById("editId").value||String(Date.now());
+ const old=products.find(x=>x.id===id);
+ const mrp=Number(document.getElementById("pMrp").value||0),price=Number(document.getElementById("pPrice").value);
+ if(mrp&&price>mrp){alert("Selling price should not be higher than MRP.");return;}
+ const item={id,name:val("pName"),category:val("pCategory"),brand:val("pBrand"),sku:val("pSku"),
+ mrp,price,stock:Number(val("pStock")),threshold:Number(val("pThreshold")||0),batch:val("pBatch"),
+ expiry:val("pExpiry"),description:val("pDescription"),status:val("pStatus"),featured:val("pFeatured")==="yes",
+ image:imageData||(old?old.image:""),rating:old?old.rating:null,reviewCount:old?old.reviewCount:0};
+ if(old)products=products.map(x=>x.id===id?item:x);else products.unshift(item);
+ persist();resetForm();renderProducts();renderManage();alert(old?"Product updated.":"Product added.");
 }
-function renderManage(){
- document.getElementById("manageList").innerHTML=getProducts().map(p=>`<article class="card"><b>${esc(p.name)}</b><p class="small">${esc(p.category)} · Stock: ${Number(p.stock)||0}</p><div class="actions"><button class="alt" onclick="editProduct('${p.id}')">Edit</button><button class="danger" onclick="deleteProduct('${p.id}')">Delete</button></div></article>`).join("");
-}
+function val(id){return document.getElementById(id).value.trim();}
 function editProduct(id){
- const p=getProducts().find(x=>x.id===id);if(!p)return;
- document.getElementById("editId").value=p.id;document.getElementById("pname").value=p.name;document.getElementById("pcat").value=p.category;document.getElementById("pdetails").value=p.details||"";document.getElementById("pprice").value=p.price||"";document.getElementById("pstock").value=p.stock||0;document.getElementById("productForm").scrollIntoView({behavior:"smooth"});
+ const p=products.find(x=>x.id===id);if(!p)return;
+ document.getElementById("editId").value=p.id;
+ const fields={pName:p.name,pCategory:p.category,pBrand:p.brand,pSku:p.sku,pMrp:p.mrp||"",pPrice:p.price,pStock:p.stock,pThreshold:p.threshold,pBatch:p.batch,pExpiry:p.expiry,pDescription:p.description,pStatus:p.status,pFeatured:p.featured?"yes":"no"};
+ Object.entries(fields).forEach(([k,v])=>document.getElementById(k).value=v??"");
+ imageData=p.image||"";const im=document.getElementById("imagePreview");if(imageData){im.src=imageData;im.style.display="block";}else im.style.display="none";
+ document.getElementById("saveBtn").textContent="Update Product";
+ document.getElementById("ownerPanel").scrollIntoView({behavior:"smooth"});
 }
-function deleteProduct(id){if(!isOwner||!confirm("Delete this product?"))return;setProducts(getProducts().filter(p=>p.id!==id));renderProducts()}
-function resetForm(){document.getElementById("productForm").reset();document.getElementById("editId").value="";document.getElementById("pstock").value=0}
-document.getElementById("year").textContent=new Date().getFullYear();
+function deleteProduct(id){if(!confirm("Delete this product from the catalogue?"))return;products=products.filter(x=>x.id!==id);persist();renderProducts();renderManage();}
+function renderManage(){
+ if(!loggedIn)return;
+ const low=products.filter(p=>p.stock<=p.threshold).length;
+ document.getElementById("inventoryStats").textContent=`${products.length} products • ${low} low-stock items`;
+ const box=document.getElementById("manageList");
+ if(!products.length){box.innerHTML='<p class="empty">No products added yet.</p>';return;}
+ box.innerHTML=products.map(p=>`<div style="padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><div><b>${esc(p.name)}</b><div class="meta">${esc(p.category)} • ₹${p.price} • Stock: ${p.stock}${p.stock<=p.threshold?' • LOW STOCK':''} • ${p.status}</div></div><div class="actions"><button class="btn secondary small" onclick="editProduct('${p.id}')">Edit</button><button class="btn danger small" onclick="deleteProduct('${p.id}')">Delete</button></div></div>`).join("");
+}
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase(),cat=document.getElementById("filterCategory").value,sort=document.getElementById("sortBy").value;
+ let list=products.filter(p=>p.status!=="hidden"&&(!cat||p.category===cat)&&(`${p.name} ${p.brand} ${p.description} ${p.category}`).toLowerCase().includes(q));
+ if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
+ if(sort==="priceLow")list.sort((a,b)=>a.price-b.price);
+ if(sort==="priceHigh")list.sort((a,b)=>b.price-a.price);
+ if(sort==="featured")list.sort((a,b)=>Number(b.featured)-Number(a.featured));
+ const grid=document.getElementById("productGrid");
+ if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">No products found. Owner can add products after login.</div>';return;}
+ grid.innerHTML=list.map(p=>{
+ const discount=p.mrp>p.price?Math.round((p.mrp-p.price)*100/p.mrp):0;
+ const image=p.image?`<img src="${p.image}" alt="${esc(p.name)}">`:"<span>Product photo</span>";
+ return `<article class="product"><div class="photo">${image}</div><div class="pbody">${p.featured?'<span class="tag">Featured</span>':""}<span class="tag">${esc(p.category)}</span><h3>${esc(p.name)}</h3><div class="meta">${esc(p.brand||"")}${p.sku?" • "+esc(p.sku):""}</div><div class="price">₹${Number(p.price).toFixed(2)}${p.mrp>p.price?` <span class="old">₹${Number(p.mrp).toFixed(2)}</span>`:""}</div>${discount?`<span class="tag">${discount}% off MRP</span>`:""}${p.stock>0?`<span class="tag">In stock: ${p.stock}</span>`:'<span class="tag out">Out of stock</span>'}<p class="meta">${esc(p.description||"")}</p>${p.expiry?`<div class="meta">Expiry: ${esc(p.expiry)}</div>`:""}<button class="btn" style="width:100%;margin-top:9px" onclick="enquire('${p.id}')">Enquire on WhatsApp</button></div></article>`;
+ }).join("");
+}
+function enquire(id){
+ const p=products.find(x=>x.id===id);if(!p)return;
+ const phone="918986595782";
+ const message=`Hello Kabir Pharma, I want to enquire about: ${p.name}. Please confirm availability and details.`;
+ window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,"_blank");
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 renderProducts();
 </script>
-</body></html>
+</body>
+</html>

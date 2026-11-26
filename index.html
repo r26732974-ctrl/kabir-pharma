@@ -11,7 +11,7 @@
 header{background:linear-gradient(120deg,#116238,#1b9657);color:#fff;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{font-size:25px;font-weight:800}.brand small{display:block;font-size:12px;font-weight:400;margin-top:4px;opacity:.9}
 header button{background:#fff;color:var(--dark);border:0;border-radius:9px;padding:10px 15px;font-weight:700}
-main{max-width:1150px;margin:24px auto;padding:0 15px}.notice{background:#fff8df;border:1px solid #f1dfa1;padding:12px 14px;border-radius:10px;color:#6b5512;font-size:13px;line-height:1.5}
+main{display:none;max-width:1150px;margin:24px auto;padding:0 15px}.notice{background:#fff8df;border:1px solid #f1dfa1;padding:12px 14px;border-radius:10px;color:#6b5512;font-size:13px;line-height:1.5}
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select{flex:1;min-width:160px}
 input,select,textarea{width:100%;padding:11px;border:1px solid #cbdacf;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}
 textarea{min-height:85px;resize:vertical}button{cursor:pointer}
@@ -28,24 +28,61 @@ textarea{min-height:85px;resize:vertical}button{cursor:pointer}
 .loginbox{max-width:420px;margin:35px auto;background:#fff;padding:24px;border-radius:14px;border:1px solid var(--line)}.loginbox h2{margin-top:0}
 footer{text-align:center;padding:25px;color:var(--muted);font-size:12px}
 @media(max-width:600px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}header{padding:15px}.brand{font-size:22px}}
+
+#customerGate{position:fixed;inset:0;z-index:50;background:linear-gradient(145deg,#eaf7ef,#f8fcf9);display:flex;align-items:center;justify-content:center;padding:18px}
+.gate-card{width:100%;max-width:430px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 14px 45px #153c2415}
+.gate-logo{text-align:center;color:var(--dark);font-size:27px;font-weight:800;margin-bottom:5px}
+.gate-sub{text-align:center;color:var(--muted);font-size:12px;margin-bottom:22px}
+.gate-card h2{text-align:center;margin:0 0 18px}
+.gate-card .field{margin:12px 0}
+.gate-card .btn{width:100%;margin-top:8px}
+.gate-bottom{position:fixed;left:18px;bottom:16px}
+.gate-bottom button{background:#fff;color:var(--dark);border:1px solid #b9d8c3;border-radius:9px;padding:10px 13px;font-weight:700}
+.gate-link{border:0;background:none;color:var(--green);font-weight:700;padding:12px 4px}
+#customerMsg{font-size:12px;color:#a22;text-align:center;min-height:16px}
+@media(max-width:480px){.gate-card{padding:22px 18px}.gate-bottom{left:12px;bottom:12px}}
 </style>
 </head>
 <body>
+
+<section id="customerGate">
+  <div class="gate-card">
+    <div class="gate-logo">Kabir Pharma</div>
+    <div class="gate-sub">Your trusted pharmacy • Chikni, Madhepura</div>
+    <div id="customerLoginView">
+      <h2>Customer Login</h2>
+      <div class="field"><label>Mobile number</label><input id="customerMobile" inputmode="numeric" maxlength="10" placeholder="Enter 10-digit mobile number"></div>
+      <div class="field"><label>Password</label><input id="customerPassword" type="password" placeholder="Enter password"></div>
+      <button class="btn" onclick="customerLogin()">Login</button>
+      <div style="text-align:center"><button class="gate-link" onclick="showCustomerSignup()">New customer? Sign Up</button></div>
+    </div>
+    <div id="customerSignupView" style="display:none">
+      <h2>Create Account</h2>
+      <div class="field"><label>Your name</label><input id="signupName" maxlength="60" placeholder="Full name"></div>
+      <div class="field"><label>Mobile number</label><input id="signupMobile" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"></div>
+      <div class="field"><label>Create password</label><input id="signupPassword" type="password" minlength="6" placeholder="At least 6 characters"></div>
+      <button class="btn" onclick="customerSignup()">Create Account</button>
+      <div style="text-align:center"><button class="gate-link" onclick="showCustomerLogin()">Back to Login</button></div>
+    </div>
+    <div id="ownerLoginView" style="display:none">
+      <h2>Owner Login</h2>
+      <div class="field"><label>Username</label><input id="username" autocomplete="username" placeholder="Owner username"></div>
+      <div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password"></div>
+      <button class="btn" onclick="login()">Owner Login</button>
+      <div style="text-align:center"><button class="gate-link" onclick="showCustomerLogin()">Back to Customer Login</button></div>
+      <p id="loginMsg" class="meta" style="text-align:center"></p>
+    </div>
+    <p id="customerMsg"></p>
+  </div>
+  <div class="gate-bottom"><button onclick="showOwnerLogin()">Owner Switch</button></div>
+</section>
+
 <header>
   <div class="brand">Kabir Pharma<small>Your trusted pharmacy • Chikni, Madhepura, Bihar</small></div>
-  <button id="ownerBtn" onclick="toggleOwner()">Owner Login</button>
+  <button id="ownerBtn" style="display:none" onclick="toggleOwner()">Owner Login</button>
 </header>
 <main>
   <div class="notice">Medicine enquiries are handled through WhatsApp. Prescription medicines are supplied only after a valid prescription is checked. Product availability may change.</div>
-  <section id="loginArea" class="loginbox" style="display:none">
-    <h2>Owner Login</h2>
-    <p class="meta">Sign in to manage the product catalogue.</p>
-    <div class="field"><label>Username</label><input id="username" autocomplete="username" placeholder="Owner username"></div>
-    <div class="field" style="margin-top:12px"><label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password"></div>
-    <div class="actions"><button class="btn" onclick="login()">Login</button><button class="btn secondary" onclick="toggleOwner()">Cancel</button></div>
-    <p id="loginMsg" class="meta"></p>
-  </section>
-
   <section id="ownerPanel">
     <div class="panelhead"><div><h2 style="margin:0">Product Manager</h2><p class="meta">Add, edit or remove catalogue items.</p></div><button class="btn secondary" onclick="logout()">Logout</button></div>
     <form id="productForm" onsubmit="saveProduct(event)">
@@ -98,13 +135,55 @@ let imageData = "";
 let loggedIn = false;
 
 function persist(){ try{localStorage.setItem(STORE_KEY,JSON.stringify(products));}catch(e){alert("Browser storage is full. Please use a smaller image or connect cloud storage.");} }
-function toggleOwner(){const a=document.getElementById("loginArea");a.style.display=a.style.display==="none"?"block":"none";}
+function toggleOwner(){showOwnerLogin();}
+function showCustomerLogin(){
+ document.getElementById("customerLoginView").style.display="block";
+ document.getElementById("customerSignupView").style.display="none";
+ document.getElementById("ownerLoginView").style.display="none";
+ document.getElementById("customerMsg").textContent="";
+}
+function showCustomerSignup(){
+ document.getElementById("customerLoginView").style.display="none";
+ document.getElementById("customerSignupView").style.display="block";
+ document.getElementById("ownerLoginView").style.display="none";
+ document.getElementById("customerMsg").textContent="";
+}
+function showOwnerLogin(){
+ document.getElementById("customerLoginView").style.display="none";
+ document.getElementById("customerSignupView").style.display="none";
+ document.getElementById("ownerLoginView").style.display="block";
+ document.getElementById("customerMsg").textContent="";
+}
+function enterCustomer(){
+ document.getElementById("customerGate").style.display="none";
+ document.querySelector("main").style.display="block";
+}
+function customerSignup(){
+ const name=document.getElementById("signupName").value.trim();
+ const mobile=document.getElementById("signupMobile").value.trim();
+ const password=document.getElementById("signupPassword").value;
+ if(!name||!/^\\d{10}$/.test(mobile)||password.length<6){document.getElementById("customerMsg").textContent="Name, valid 10-digit mobile number and 6+ character password are required.";return;}
+ const users=JSON.parse(localStorage.getItem("kabir_pharma_customers")||"[]");
+ if(users.some(u=>u.mobile===mobile)){document.getElementById("customerMsg").textContent="This mobile number is already registered. Please login.";return;}
+ users.push({name,mobile,password});localStorage.setItem("kabir_pharma_customers",JSON.stringify(users));
+ document.getElementById("customerMobile").value=mobile;
+ document.getElementById("customerPassword").value=password;
+ customerLogin();
+}
+function customerLogin(){
+ const mobile=document.getElementById("customerMobile").value.trim();
+ const password=document.getElementById("customerPassword").value;
+ const users=JSON.parse(localStorage.getItem("kabir_pharma_customers")||"[]");
+ if(!/^\\d{10}$/.test(mobile)){document.getElementById("customerMsg").textContent="Enter a valid 10-digit mobile number.";return;}
+ if(!users.some(u=>u.mobile===mobile&&u.password===password)){document.getElementById("customerMsg").textContent="Account not found or password incorrect. Please sign up first.";return;}
+ enterCustomer();
+}
 function login(){
  const u=document.getElementById("username").value.trim(),p=document.getElementById("password").value;
- if(u===DEMO_USER&&p===DEMO_PASS){loggedIn=true;document.getElementById("loginArea").style.display="none";document.getElementById("ownerPanel").style.display="block";document.getElementById("ownerBtn").style.display="none";renderManage();}
+ if(u===DEMO_USER&&p===DEMO_PASS){loggedIn=true;document.getElementById("customerGate").style.display="none";document.querySelector("main").style.display="block";document.getElementById("ownerPanel").style.display="block";document.getElementById("ownerBtn").style.display="none";renderManage();}
  else document.getElementById("loginMsg").textContent="Username or password is incorrect.";
 }
-function logout(){loggedIn=false;document.getElementById("ownerPanel").style.display="none";document.getElementById("ownerBtn").style.display="block";resetForm();}
+function logout(){loggedIn=false;document.getElementById("ownerPanel").style.display="none";document.querySelector("main").style.display="none";document.getElementById("customerGate").style.display="flex";showCustomerLogin();resetForm();}
 function previewImage(e){
  const f=e.target.files&&e.target.files[0]; if(!f)return;
  if(!f.type.startsWith("image/")){alert("Please choose an image file.");return;}
